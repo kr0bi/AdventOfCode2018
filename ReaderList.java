@@ -1,4 +1,4 @@
-package adventOfCode.dayOne;
+package adventOfCode;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -14,15 +14,19 @@ import java.util.Vector;
 public class ReaderList {
     private List<String> file;
 
-    public ReaderList(String nameFile) throws IOException {
-        Path filePath = buildPath(nameFile);
+    public ReaderList(String nameFile, String day) throws IOException {
+        Path filePath = buildPath(nameFile, day);
         file = Files.readAllLines(filePath);
     }
 
-    private Path buildPath(String nameFile) {
+    public List<String> getFile() {
+        return file;
+    }
+
+    private Path buildPath(String nameFile, String dayNumber) {
         assert (nameFile != null) : "nameFile can't be null";
         assert (nameFile.length() > 0) : "nameFile.length MUST be > 0";
-        nameFile = "/src/main/java/adventOfCode/dayOne/" + nameFile;
+        nameFile = "/src/main/java/adventOfCode/day" + dayNumber + "/" + nameFile;
         return FileSystems.getDefault().getPath(System.getProperty("user.dir") + nameFile);
     }
 

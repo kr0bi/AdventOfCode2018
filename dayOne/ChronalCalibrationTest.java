@@ -1,5 +1,6 @@
 package adventOfCode.dayOne;
 
+import adventOfCode.ReaderList;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class ChronalCalibrationTest {
 
     private static ReaderList letturaInput(ReaderList theReaderList) {
         try {
-            theReaderList = new ReaderList("input");
+            theReaderList = new ReaderList("input", "One");
         } catch (IOException ioe){
             System.err.println(ioe.toString() + " file non trovato!");
         }
