@@ -9,7 +9,7 @@ import java.util.Vector;
 
 public class ChronalCalibration {
     /**
-     * list: vettore di interi che conterra' gli input.old
+     * list: vettore di interi che conterra' gli input
      */
     private Vector<Integer> list;
 
