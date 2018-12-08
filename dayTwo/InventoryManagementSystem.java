@@ -5,6 +5,7 @@ import adventOfCode.ReaderList;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * Mission: risolvere il problema del giorno due
@@ -73,6 +74,60 @@ public class InventoryManagementSystem {
         char[] tempArray = word.toCharArray();
         Arrays.sort(tempArray);
         return new String(tempArray);
+    }
+
+    public String commonLetters (){
+        Vector<String> list = findSemiEqualStrings();
+        String first = list.get(0);
+        String second = list.get(1);
+        String res = "";
+        for (int i=0; i<first.length(); i++){
+            if (first.charAt(i) == second.charAt(i)){
+                res = res + first.charAt(i);
+            }
+        }
+        return res;
+    }
+
+    private Vector<String> findSemiEqualStrings(){
+        List<String> inputs = this.rl.getFile();
+        Vector<String> risultato = new Vector<>();
+        boolean trovato = false;
+
+        for (int i=0; i<inputs.size(); i++){
+            int errore=0;
+            String current = inputs.get(i);
+            for (int j = i+1; j<inputs.size(); j++){
+                if (isFounded(trovato)) break;
+                String daConfrontare = inputs.get(j);
+                errore = 0;
+
+                for (int k = 0; k < current.length(); k++) {
+                    if (!(current.charAt(k) == daConfrontare.charAt(k))) {
+                        errore = errore + 1;
+                        if (errore == 2) {
+                            break;
+                        }
+                    }
+                    if (k==current.length()-1){
+                        risultato.addElement(current);
+                        risultato.addElement(daConfrontare);
+                        trovato = true;
+                        break;
+                    }
+                }
+            }
+            if (isFounded(trovato)) break;
+        }
+        return risultato;
+
+    }
+
+    private boolean isFounded(boolean trovato) {
+        if (trovato) {
+            return true;
+        }
+        return false;
     }
 
     /*public String commonCharactersBetweenStrings(){
