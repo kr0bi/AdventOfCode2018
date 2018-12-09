@@ -1,4 +1,4 @@
-package adventOfCode.dayTwo;
+package adventOfCode.day2;
 
 import adventOfCode.ReaderList;
 

@@ -1,4 +1,4 @@
-package adventOfCode.dayOne;
+package adventOfCode.day1;
 
 import adventOfCode.ReaderList;
 import org.jetbrains.annotations.NotNull;

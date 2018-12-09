@@ -1,4 +1,4 @@
-package adventOfCode.dayTwo;
+package adventOfCode.day2;
 
 public class InventoryManagementSystemTest {
     public static void main(String[] args) {
