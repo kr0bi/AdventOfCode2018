@@ -129,10 +129,4 @@ public class InventoryManagementSystem {
         }
         return false;
     }
-
-    /*public String commonCharactersBetweenStrings(){
-        int differencesBetweenStrings = 0;
-    }*/
-
-
 }
